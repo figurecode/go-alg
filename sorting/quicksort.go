@@ -2,7 +2,7 @@ package sorting
 
 // Quicksort Алгоритм быстрой сортировки с использованием рекурсии
 func Quicksort(arr []int) []int {
-	var supportElm int
+	var supportElmInd int
 	var less []int
 	var greater []int
 
@@ -11,9 +11,9 @@ func Quicksort(arr []int) []int {
 	}
 
 	// сомнительный способ, почитать/поискать лучший вариант
-	supportElm = int(float64(len(arr)) / 2)
+	supportElmInd = int(float64(len(arr)) / 2)
 
-	root := arr[supportElm]
+	root := arr[supportElmInd]
 
 	for i := 0; i < len(arr); i++ {
 		if arr[i] < root {
