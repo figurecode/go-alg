@@ -1,19 +1,22 @@
 package sorting
 
+type Array []int64
+
 // Quicksort Алгоритм быстрой сортировки с использованием рекурсии
-func Quicksort(arr []int) []int {
-	var supportElmInd int
-	var less []int
-	var greater []int
+func Quicksort(arr Array) Array {
+	var (
+		rootIndex     int
+		root          int64
+		less, greater Array
+	)
 
 	if len(arr) < 2 {
 		return arr
 	}
 
-	// сомнительный способ, почитать/поискать лучший вариант
-	supportElmInd = int(float64(len(arr)) / 2)
-
-	root := arr[supportElmInd]
+	// Тут будет возвращаться ближайшее целое, что подходит в данном случае, поэтому нет преобразования типа
+	rootIndex = len(arr) / 2
+	root = arr[rootIndex]
 
 	for i := 0; i < len(arr); i++ {
 		if arr[i] < root {
