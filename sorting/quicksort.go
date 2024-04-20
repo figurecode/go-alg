@@ -19,10 +19,15 @@ func Quicksort(arr Array) Array {
 	root = arr[rootIndex]
 
 	for i := 0; i < len(arr); i++ {
+		// Т.к. опорный элемент остаётся в массиве при его обходе, мы не должны его сравнивать с самим собой
+		if i == rootIndex {
+			continue
+		}
+
 		if arr[i] < root {
 			less = append(less, arr[i])
 		}
-		if arr[i] > root {
+		if arr[i] >= root {
 			greater = append(greater, arr[i])
 		}
 	}
