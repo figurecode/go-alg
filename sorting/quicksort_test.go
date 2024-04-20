@@ -23,6 +23,10 @@ func TestQuicksort(t *testing.T) {
 			arr:    Array{121, 2, 43, 1, 73, 7, 8, 23, 98},
 			result: Array{1, 2, 7, 8, 23, 43, 73, 98, 121},
 		},
+		"array-4": {
+			arr:    Array{33, 4, 5, 44, 1, 33, 4, 1, 55, 3},
+			result: Array{1, 1, 3, 4, 4, 5, 33, 33, 44, 55},
+		},
 	}
 
 	for name, tc := range cases {
